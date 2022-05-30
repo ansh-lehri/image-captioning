@@ -9,7 +9,7 @@ from keras.models import Sequential, Model
 from keras.utils import np_utils
 from keras.preprocessing import image, sequence
 import cv2
-from keras.preprocessing.sequence import pad_sequences
+from keras_preprocessing.sequence import pad_sequences
 from tqdm import tqdm
 
 
