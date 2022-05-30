@@ -2,17 +2,17 @@
 
 {%block content%}
 
-<center>
+<center >
 	
-<h1 class='display-1'>Automated Image</h1>
-<h1 class='display-1'>Captioning</h1>
+<h1 data-shadow='dang!'>Automated Image Captioning</h1>
+<h2 class="head2" > Want to describe your image ?  Just upload and try </h2>
 
 <br>
 <br>
 
-<form action="{{url_for('after')}}" method='POST' enctype='multipart/form-data'>
+<form action="{{url_for('after')}}" method='POST' enctype='multipart/form-data' style="margin-top: 150px;" >
     <input type="file" name='file1'>
-<input type="submit" name="btn" value='predict caption' class='btn btn-warning'> 
+<input type="submit" name="btn" value='Generate' class='btn btn-warning'> 
 </form>
 </center>
 

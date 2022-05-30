@@ -2,8 +2,8 @@ from flask import Flask, render_template, request
 import cv2
 from keras.models import load_model
 import numpy as np
-from keras.applications import ResNet50
-from keras.optimizers import Adam
+from keras.applications.resnet import ResNet50
+#from keras.optimizers import Adam
 from keras.layers import Dense, Flatten,Input, Convolution2D, Dropout, LSTM, TimeDistributed, Embedding, Bidirectional, Activation, RepeatVector,Concatenate
 from keras.models import Sequential, Model
 from keras.utils import np_utils
@@ -57,7 +57,7 @@ print("="*150)
 print("MODEL LOADED")
 
 #resnet = ResNet50(include_top=False,weights='imagenet',input_shape=(224,224,3),pooling='avg')
-
+#resnet.save('resnet.h5')
 
 resnet = load_model('resnet.h5')
 
@@ -82,6 +82,7 @@ def after():
     global model, resnet, vocab, inv_vocab
 
     img = request.files['file1']
+    print(type(img))
 
     img.save('static/file.jpg')
 
